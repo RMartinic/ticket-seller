@@ -1,0 +1,93 @@
+
+.datepicker{
+    background-color: beige;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+.days{
+    font-family: Courier, monospace;
+    color: #C0C0C0;
+    background-color: #333333;
+    text-align: center;
+    font-size: 1em;
+}
+.dates{
+    color:#333333;
+}
+.dates button{
+    font-family: Courier, monospace;
+    border: transparent;
+    background-color: beige;
+    aspect-ratio: 1;
+    font-size: 1em;
+    border-radius: 45%;
+    transition: 0.2s;
+}
+.days, .dates{
+    display: grid;
+    grid-template-columns: repeat(7,2.5em);
+    margin-block: 10px;
+}
+.dates button.today{
+    background-color: #E2725B;
+    color: white;
+}
+.dates button:hover{
+    background-color: #1E3A5F;
+    color: #C0C0C0;
+    transition: 0.2s;
+}
+.dates button.selected{
+    background-color: #1E3A5F;
+    color:#C0C0C0;
+}
+.datepicker-header{
+    font-family: Courier,monospace;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.datepicker-header>button{
+    border: transparent;
+    text-align: center;
+    font-size: 0.75em;
+    width: 10%;
+    transition:0.2s;
+    aspect-ratio: 1;
+    background-color: beige;
+    border-radius: 50%;
+}
+.datepicker-header>button:hover{
+    background-color:#333333;
+    color: #C0C0C0;
+    transition: 0.2s;
+    cursor: pointer;
+}
+ .dates button:disabled{
+    opacity:0.5;
+    pointer-events: none;
+    user-select: none;
+ }
+ .datepicker-footer{
+    position: relative;
+    bottom:0%;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    height:30px;
+ }
+ .refresh{
+    background-color: #00FFFF;
+    font-family: Impact, sans-serif;
+    font-size: 1em;
+    color: #333333;
+    border-radius: 5px;
+    width:40%;
+    height:30px;
+ }
+ .current-year{
+    font-family: Courier,monospace;
+    margin: 0px;
+ }
