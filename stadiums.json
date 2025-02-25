@@ -1,0 +1,66 @@
+[
+    {   "id":0,
+        "stadium":"Stadion Maksimir, Zagreb",
+        "iframeSrc":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2780.6282991524486!2d16.01542007682068!3d45.818702071081816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d7c7c54294cd%3A0x141ee8b4a96f7e8e!2sStadion%20Maksimir!5e0!3m2!1shr!2shr!4v1740092585832!5m2!1shr!2shr",
+        "buyTicketSrc":"https://gnkdinamo.hr/hr/ulaznice"
+    },
+    {
+        "id":1,
+        "stadium":"Gradski stadion Velika Gorica, Velika Gorica",
+        "iframeSrc":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2785.355186624111!2d16.070595476816386!3d45.723971271079485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47667ff983be44f1%3A0x421392606125507f!2sGradski%20stadion%20Velika%20Gorica!5e0!3m2!1shr!2shr!4v1740092842898!5m2!1shr!2shr",
+        "buyTicketSrc":"https://www.hnk-gorica.hr/navijaci/ulaznice"
+    },
+    {
+        "id":2,
+        "stadium":"Stadion Poljud",
+        "iframeSrc":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2893.1750347546827!2d16.4293408767184!3d43.51954257110877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13355de5b52260c7%3A0xea1d37942d1ea3f4!2sStadion%20Poljud!5e0!3m2!1shr!2shr!4v1740093136325!5m2!1shr!2shr",
+        "buyTicketSrc":"https://hajduk.mojekarte.hr/hr/ponuda.html"
+    },
+    {
+        "id":3,
+        "stadium":"Stadion Aldo Drosina, Pula",
+        "iframeSrc":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d689.2039640140824!2d16.343046585059053!3d46.29363238558249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4768ab8110c6ce65%3A0x7dbcaa6b0b357f56!2sStadion%20An%C4%91elko%20Herjavec!5e0!3m2!1shr!2shr!4v1739398056936!5m2!1shr!2shr",
+        "buyTicketSrc":"https://nkistra.com/buy-tickets/kupi-ulaznice/"
+    },
+    {
+        "id":4,
+        "stadium":"Stadion Kranjčevićeva, Zagreb",
+        "iframeSrc":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2781.334674534489!2d15.955923991332469!3d45.80455539651763!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4765d713f3cf3261%3A0xea9f2f81e0ee31ac!2sStadion%20Kranj%C4%8Devi%C4%87eva!5e0!3m2!1shr!2shr!4v1740093537754!5m2!1shr!2shr",
+        "buyTicketSrc":"https://nklokomotiva.hr"
+    },
+    {
+        "id":5,
+        "stadium":"Opus Arena, Osijek",
+        "iframeSrc":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2793.195354381271!2d18.655257576809262!3d45.56650997107581!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475ce7564c3a9fe5%3A0x6f60cf11e6f83cef!2sOpus%20Arena!5e0!3m2!1shr!2shr!4v1740093783503!5m2!1shr!2shr",
+        "buyTicketSrc":"https://ulaznice.nk-osijek.hr"
+    },
+    {
+        "id":6,
+        "stadium":"Stadion Rujevica, Rijeka",
+        "iframeSrc":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2804.0456690032324!2d14.399642276799439!3d45.3478903710723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4764a6c6a45cd13f%3A0x698d0ad11598ac87!2sStadion%20Rujevica!5e0!3m2!1shr!2shr!4v1740093969720!5m2!1shr!2shr",
+        "buyTicketSrc":"https://nk-rijeka.hr/ulaznice/"
+    },
+    {
+        "id":7,
+        "stadium":"Stadion Ivan Kušek-Apaš, Koprivnica",
+        "iframeSrc":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2763.2278766345935!2d16.832157376836523!3d46.16611937109411!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x476627059c346cfd%3A0xf276a043186b4a6f!2sGradski%20stadion%20Ivan%20Ku%C5%A1ek%20-%20Apa%C5%A1!5e0!3m2!1shr!2shr!4v1740094190605!5m2!1shr!2shr",
+        "buyTicketSrc":"https://www.nk-slaven-belupo.hr/ulaznice/jednokratne-ulaznice"
+    },
+    {
+        "id":8,
+        "stadium":"Stadion Šubićevac, Šibenik",
+        "iframeSrc":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2882.41068810246!2d15.89377147672812!3d43.74356777109796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13352f4329e66aed%3A0xe45200a421139675!2zU3RhZGlvbiDFoHViacSHZXZhYw!5e0!3m2!1shr!2shr!4v1740094544583!5m2!1shr!2shr",
+        "buyTicketSrc":"https://www.hnk-sibenik.hr"
+    } ,  
+    {
+        "id":9,
+        "stadium":"Stadion Anđelko Herjavec, Varaždin",
+        "iframeSrc":"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2756.8360828503364!2d16.34116327684234!3d46.293230571099606!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4768aaea638c66a1%3A0xcdeaa4ee126368da!2sNK%20Vara%C5%BEdin!5e0!3m2!1shr!2shr!4v1740094815094!5m2!1shr!2shr",
+        "buyTicketSrc":"https://nk-varazdin.hr"
+    },
+    {
+        "id":10,
+        "stadium":"Croatia",
+        "buyTicketSrc":"https://hns.family"
+    }
+]

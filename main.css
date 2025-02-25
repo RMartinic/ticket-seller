@@ -1,6 +1,5 @@
 main{
     background-color:beige;
-    padding: 10px;
 }
 #event-container{
     display: flex;
@@ -12,6 +11,7 @@ main{
     width:100%;
     background-color:beige;
     padding: 10px;
+    min-height: 100%;
     
 }
 #navigation{
@@ -38,11 +38,12 @@ h1{
     color: #C0C0C0;
     border-radius: 5px;
     border: transparent;
-    height: 5%;
-    width: 5%;
-    font-size: 1em;
+    height: 7%;
+    width: 16%;
+    font-size: 1.25em;
     font-family: Courier, monospace;
-    margin: 0 2% 0 2%;
+    margin: 0 2.5% 0 2.5%;
+    text-align: center;
 }
 .event{
     width: 25%;
@@ -85,4 +86,54 @@ h2{
 button:hover{
     opacity: 0.6;
     cursor: pointer;
+}
+.fa-solid{
+    margin-left: 5px;
+}
+.fa-regular{
+    width:10px;
+    color: #C0C0C0;
+    position: relative;
+}
+.event-header{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+.fa-regular:hover{
+    color: red;
+    cursor: pointer;
+}
+.add-background{
+    position:fixed;
+    top:0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: black;
+    opacity:0.6;
+}
+.adder{
+    position:fixed;
+    z-index: 2;
+    height:75%
+}
+label{
+    color: #C0C0C0;
+    font-family: Courier, monospace;
+}
+input,select{
+    font-family: Courier,monospace;
+}
+#add-event-button, #cancel-event-button{
+    background-color: #00FFFF ;
+    font-family: Impact, sans-serif;
+    width: 20%;
+    font-size: 1em;
+}
+#add-event-button{
+    color: green;
+}
+#cancel-event-button{
+    color:#FF4500;
 }

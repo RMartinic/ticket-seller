@@ -74,6 +74,12 @@ function findStartDate(startdate,datesElements){
     }
     return null;
 }
+function getSelectedDates(){
+    if (fixedDate){
+        const selectedDates=[MarkedDate1,MarkedDate2];
+        return selectedDates;
+    }
+}
 
 refreshButton.addEventListener('click',()=>handleRefreshClick());
 nextButton.addEventListener('click',()=>{
