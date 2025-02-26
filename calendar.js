@@ -41,35 +41,46 @@ function handleRefreshClick(){
         selectedDaysList.pop();
     }
 }
-function markFixedDates(date1, date2){
+function setFixed(){
     fixedDate=true; 
     refreshContainer.style.display="none";  
+}
+function markFixedDates(date1, date2){
     MarkedDate1=date1;
     MarkedDate2=date2;
     const datesElements= dates.children;
     const dayInMIliseconds=1000*60*60*24;
-    let startDate = date1<date2 ? date1 : date2;
-    let endDate =date1>date2 ? date1 : date2;
-    let startingMonth=startDate.getMonth();
-    let i=findStartDate(startDate,datesElements);
-    if(!i) return;
-    while(startDate<=endDate){
-        if(startDate.getMonth()===month && startDate.getFullYear()===year){
+    if(date2.getTime()!==0){
+        let startDate = date1<date2 ? date1 : date2;
+        let endDate =date1>date2 ? date1 : date2;
+        let startingMonth=startDate.getMonth();
+        let i=findStartDate(startDate,datesElements);
+        if(!i) return;
+        while(startDate<=endDate){
+            if(startDate.getMonth()===month && startDate.getFullYear()===year){
+                datesElements[i].classList.add("selected");
+            }
+            i++;
+            startDate=new Date(startDate.getTime()+dayInMIliseconds);
+            if(startingMonth!=startDate.getMonth()){
+                i=findStartDate(startDate,datesElements);
+                startingMonth=startDate.getMonth();
+            } 
+        }
+    }
+    else{
+        if(date1.getMonth()===month && date1.getFullYear()===year){
+            let i=findStartDate(date1,datesElements);
             datesElements[i].classList.add("selected");
         }
-        i++;
-        startDate=new Date(startDate.getTime()+dayInMIliseconds);
-        if(startingMonth!=startDate.getMonth()){
-            i=findStartDate(startDate,datesElements);
-            startingMonth=startDate.getMonth();
-        } 
     }
-    
 }
 function findStartDate(startdate,datesElements){
     for (let index = 0; index < datesElements.length; index++) {
-        if(startdate.getDate()===parseInt(datesElements[index].innerHTML)) {
-            return index;
+        if(datesElements[index].disabled===false){
+            if(startdate.getDate()===parseInt(datesElements[index].innerHTML)) {
+                return index;
+            }
         }
     }
     return null;
@@ -78,6 +89,19 @@ function getSelectedDates(){
     if (fixedDate){
         const selectedDates=[MarkedDate1,MarkedDate2];
         return selectedDates;
+    }
+    else if(selectedDaysList.length==0){
+        return -1;
+    }
+    else if(selectedDaysList.length==1){
+        const selectedDay1= new Date(year,month,parseInt(selectedDaysList[0].innerHTML));
+        const selectedDay2=null;
+        return [selectedDay1,selectedDay2];
+    }
+    else{
+        const selectedDay1= new Date(year,month,parseInt(selectedDaysList[0].innerHTML));
+        const selectedDay2= new Date(year,month,parseInt(selectedDaysList[1].innerHTML));
+        return [selectedDay1,selectedDay2];
     }
 }
 

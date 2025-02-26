@@ -54,7 +54,7 @@ function handleAddClick(){
     <input type="url" id="url-input">
     <label for="description-input">Description:</label>
     <textarea id="description-input" rows=10></textarea>
-    <object class="datepicker" data="calendar.html" width="100%" height="390px"></object>
+    <object id="choose-date-datepicker" class="datepicker" data="calendar.html" width="100%" height="390px"></object>
     <label for="location-selector">Location:</label>
     <select id="location-selector"></select>
     <div class="button-container">
@@ -67,8 +67,14 @@ function handleAddClick(){
     for(let index=0;index<stadiumsList.length;index++){
         locationSelector.options[locationSelector.options.length]=new Option(stadiumsList[index].stadium,index);
     }
+    const saveEventButton=document.getElementById("add-event-button");
+    const cancelEventButton=document.getElementById("cancel-event-button");
+    cancelEventButton.addEventListener('click',()=>{
+        blackBackground.remove();
+        eventAdder.remove();
+    })
+    saveEventButton.addEventListener('click',()=>handleSaveEvent())
 }
-
 function makeEventDiv(event,stadiumsList) {
     const newDiv = document.createElement("div");
     newDiv.classList.add("event");
@@ -96,6 +102,7 @@ function makeEventDiv(event,stadiumsList) {
     const datepickerObject=newDiv.querySelector(".datepicker");
     datepickerObject.addEventListener("load",()=>{
         const[date1, date2]=event.date.map(d=>new Date(d));
+        datepickerObject.contentWindow.setFixed();
         datepickerObject.contentWindow.markFixedDates(date1,date2);
     })
     return newDiv;
@@ -116,6 +123,32 @@ function handleTrashClick(trashButton){
     localStorage.removeItem("events");
     localStorage.setItem("events",JSON.stringify(storedEventsList));
     location.reload();
+}
+function handleSaveEvent(){
+    const newHeadline=document.getElementById("headline-input").value;
+    const newImage=document.getElementById("url-input").value;
+    const newDescription=document.getElementById("description-input").value;
+    const newDatePicker=document.getElementById("choose-date-datepicker");
+    const newDates= newDatePicker.contentWindow.getSelectedDates();
+    const newLocation=document.getElementById("location-selector").value;
+    if(newHeadline && newImage && newDates!==-1 && newLocation){
+        const savedEvents=JSON.parse(localStorage.getItem("events"));
+        const newObject={
+            headline:newHeadline,
+            imageSrc:newImage,
+            description:newDescription,
+            date:newDates,
+            stadiumID:newLocation
+        }
+        savedEvents.push(newObject);
+        localStorage.removeItem("events");
+        localStorage.setItem("events",JSON.stringify(savedEvents));
+        location.reload();
+    }
+    else{
+        window.alert("Some key data is missing!");
+    }
+    
 }
 async function fetchStadiums() {
     try {
