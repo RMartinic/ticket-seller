@@ -9,18 +9,25 @@ const dropdownRemoveButton=document.getElementById("dropdown-remove-button");
 const dropdownFilterButton=document.getElementById("dropdown-filter-button");
 const events = [
     {
-        headline: "Istra 1961 - Hajduk",
-        imageSrc: "https://hajduk.hr/sadrzaj/slike-za-vijesti/800x400/2023-09-02-23-14-3242-.jpg",
-        description: "This Saturday, February 15, 2025, at 4:00 PM, Istra 1961 will host Hajduk Split at Stadion Aldo Drosina in a Croatian 1. HNL clash. Hajduk Split currently holds the 1st position in the league standings with 40 points from 21 matches, while Istra 1961 is in 7th place with 23 points from the same number of matches.In the last two matches both teams scored victory, Hajduk at home against Varaždin and Istra secured 1-0 win visiting Rijeka.",
-        date: [new Date(2025, 1, 15), new Date(2025, 1, 16)],
-        stadiumID:3
+        headline: "Rijeka - Šibenik",
+        imageSrc: "https://www.tportal.hr/media/thumbnail/w1000/1800499.jpeg",
+        description: "This Friday, March 7, 2025, league leaders Rijeka will take on bottom-placed Šibenik. With a 28-point gap between them, both teams have plenty at stake—Rijeka in the title race and Šibenik in the fight for survival. Rijeka has picked up 7 points in their last 5 matches, while Šibenik has struggled, earning just 1 point in the same period.",
+        date: [new Date(2025, 2, 7), null],
+        stadiumID:6
     },
     {
-        headline: "Varaždin - Slaven Belupo",
-        imageSrc: "https://www.tportal.hr/media/thumbnail/w1000/2348544.jpeg",
-        description: "This Sunday, NK Varaždin will host Slaven Belupo in the 22nd fixture of the SuperSport HNL. Varaždin is coming off a defeat against Hajduk Split, despite putting in a strong performance. On the other hand, Slaven Belupo secured a late win against NK Lokomotiva Zagreb, maintaining their good form in the competition with two draws prior to that victory. Slaven Belupo currently sits in 6th place, while NK Varaždin holds 5th place with a five-point advantage.",
-        date: [new Date(2025, 1, 16), new Date(2025, 1, 17)],
-        stadiumID:9
+        headline: "Hajduk - Gorica",
+        imageSrc: "https://hajduk.hr/sadrzaj/slike-za-vijesti/800x400/2024-12-07-19-12-1991-.jpg",
+        description: "This Sunday, March 9, 2025, second-placed Hajduk will face ninth-placed Gorica. Hajduk sits at 45 points, just one behind league leaders Rijeka, while Gorica holds a six-point cushion over bottom-placed Šibenik. Despite the 21-point gap between them in the standings, their recent form is nearly identical, with both teams collecting 8 points from their last 5 matches.",
+        date: [new Date(2025, 2, 9), null],
+        stadiumID:2
+    },
+    {
+        headline: "5 weeks SSHNL pass",
+        imageSrc:"https://image.dnevnik.hr/media/images/1600x1067/Feb2025/63015286-supersport-hnl.jpg",
+        description:"This ticket pass grants unlimited access to stadiums for the next five fixtures of Croatia’s top-tier football league, SSHNL.",
+        date:[new Date(2025, 2, 7), new Date(2025, 3, 7)],
+        stadiumID:10
     }
 ];
 
@@ -104,7 +111,7 @@ function makeEventDiv(event,stadiumsList) {
         <p class="description">${event.description}</p>
         <div class="location-container">
             <p class="location-name">${stadiumsList[event.stadiumID].stadium}</p>
-            <iframe src="${stadiumsList[event.stadiumID].iframeSrc}" width="100%" height="300px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe class="google-map" src="${stadiumsList[event.stadiumID].iframeSrc}" width="100%" height="300px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
         <div class="button-container">
             <button class="buy-button" onclick="window.open('${stadiumsList[event.stadiumID].buyTicketSrc}')">Buy tickets</button>
@@ -117,6 +124,10 @@ function makeEventDiv(event,stadiumsList) {
         datepickerObject.contentWindow.setFixed();
         datepickerObject.contentWindow.markFixedDates(date1,date2);
     })
+    console.log()
+    if(event.stadiumID===10){
+        newDiv.querySelector(".google-map").remove();
+    }
     return newDiv;
 }
 function handleTrashClick(trashButton){
