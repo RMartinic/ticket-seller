@@ -2,6 +2,11 @@ const eventContainer = document.getElementById("event-container");
 const addButton=document.getElementById("add-button");
 const removeButton=document.getElementById("remove-button");
 const filterButton=document.getElementById("filter-button");
+const menuButton=document.getElementById("menu-bar");
+const dropdownMenu=document.getElementsByClassName("dropdown-menu");
+const dropdownAddButton=document.getElementById("dropdownd-add-button");
+const dropdownRemoveButton=document.getElementById("dropdown-remove-button");
+const dropdownFilterButton=document.getElementById("dropdown-filter-button");
 const events = [
     {
         headline: "Istra 1961 - Hajduk",
@@ -26,9 +31,16 @@ if (!localStorage.getItem("events")) {
 }
 
 addButton.addEventListener('click',()=>handleAddClick());
+dropdownAddButton.addEventListener('click',()=>handleAddClick());
 removeButton.addEventListener('click',()=>handleRemoveClick());
+dropdownRemoveButton.addEventListener('click',()=>handleRemoveClick());
 filterButton.addEventListener('click',()=>handleFilterClick());
+dropdownFilterButton.addEventListener('click',()=>handleFilterClick());
 
+
+menuButton.addEventListener('click',()=>{
+    dropdownMenu[0].classList.toggle("active");
+})
 function handleRemoveClick(){
     const trashButtons = document.querySelectorAll(".fa-trash-can");
     trashButtons.forEach(trashButton => {
@@ -54,7 +66,7 @@ function handleAddClick(){
     <input type="url" id="url-input">
     <label for="description-input">Description:</label>
     <textarea id="description-input" rows=10></textarea>
-    <object id="choose-date-datepicker" class="datepicker" data="calendar.html" width="100%" height="390px"></object>
+    <object id="choose-date-datepicker" class="datepicker" data="calendar.html" width="100%" height="510px"></object>
     <label for="location-selector">Location:</label>
     <select id="location-selector"></select>
     <div class="button-container">
@@ -91,8 +103,8 @@ function makeEventDiv(event,stadiumsList) {
         </div>
         <p class="description">${event.description}</p>
         <div class="location-container">
-            <p>${stadiumsList[event.stadiumID].stadium}</p>
-            <iframe src="${stadiumsList[event.stadiumID].iframeSrc}" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <p class="location-name">${stadiumsList[event.stadiumID].stadium}</p>
+            <iframe src="${stadiumsList[event.stadiumID].iframeSrc}" width="100%" height="300px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
         <div class="button-container">
             <button class="buy-button" onclick="window.open('${stadiumsList[event.stadiumID].buyTicketSrc}')">Buy tickets</button>
@@ -149,6 +161,39 @@ function handleSaveEvent(){
         window.alert("Some key data is missing!");
     }
     
+}
+function handleFilterClick(){
+    if(document.getElementsByClassName("filter-selection-container").length){
+        const filterSelection=document.getElementsByClassName("filter-selection-container");
+        filterSelection[0].remove();
+        return;
+    } 
+    const filterSelection=document.createElement("div");
+    filterSelection.classList.add("filter-selection-container");
+    filterSelection.innerHTML=`
+    <select id="filter-select"></select>
+    <button class="filter-action-button" id="save-filter-button">Filter</button>
+    <button class="filter-action-button" id="cancel-filter-button">Cancel</button>
+    `;
+    eventContainer.append(filterSelection);
+    const filterSelectForm=document.getElementById("filter-select");
+    for (let i = 0; i < stadiumsList.length; i++) {
+        filterSelectForm.options[filterSelectForm.options.length]=new Option(stadiumsList[i].stadium,stadiumsList[i.stadium]);
+    }
+    const filterTargets=document.querySelectorAll(".location-name");
+    document.getElementById("save-filter-button").addEventListener('click',()=>{
+        filterTargets.forEach((target)=>{
+            if(target.innerHTML!==filterSelectForm.value){
+                target.parentElement.parentElement.style.display="none";
+            }
+        });
+    });
+    document.getElementById("cancel-filter-button").addEventListener('click',()=>{
+        filterTargets.forEach((target)=>{
+            target.parentElement.parentElement.style.display="block";
+        });
+        filterSelection.remove();
+    });
 }
 async function fetchStadiums() {
     try {

@@ -1,0 +1,57 @@
+#navigation{
+    display: none;
+}
+.dropdown-menu{
+    display: none;
+ transform: translateY(0);
+}
+#dropdown{
+    position: absolute;
+    top: 35%;
+    left:10px;
+    width:25%;
+}
+header{
+    height:8%;
+}
+#event-container{
+    top:8%;
+    padding: 0px;
+}
+#menu-bar{
+    background-color: transparent;
+    border: none;
+    color:#C0C0C0;
+    width:100%;
+}
+.fa-bars{
+    font-size: 1.5em
+}
+.active{
+    padding: 10px;
+    display:flex;
+    flex-direction: column;
+    background-color:#333333 ;
+    width:100%;
+}
+.dropdown-button{
+    background-color: transparent;
+    border: none;
+    color: #C0C0C0;
+    font-family: Courier,monospace;
+    height: 40px;
+    font-size: 1.2em;
+}
+.adder{
+    top:9%;
+    width:80%;
+    height:85%;
+}
+.filter-selection-container{
+    top:9%;
+    left:33%;
+    width:65%;
+}
+#filter-select{
+    width:100%;
+}

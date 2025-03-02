@@ -4,15 +4,19 @@ main{
 #event-container{
     display: flex;
     justify-content: space-evenly;
-    align-items: flex-start;
+    align-items: center;
     flex-wrap: wrap;
     position: absolute;
     top: 12%;
-    width:100%;
+    width:100vw;
     background-color:beige;
     padding: 10px;
     min-height: 100%;
+    overflow-x: hidden;
     
+}
+img{
+    width: 100%;
 }
 #navigation{
     display: flex;
@@ -47,7 +51,7 @@ h1{
 }
 .event{
     width: 25%;
-    height: 40%;
+    height: 45%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -56,7 +60,8 @@ h1{
     border-radius: 5px;
     margin:10px;
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.2);
-    min-width: 350px;
+    min-width: 300px;
+    margin-bottom: 20px;
 }
 p{
     color: #C0C0C0;
@@ -116,7 +121,10 @@ button:hover{
 .adder{
     position:fixed;
     z-index: 2;
-    height:75%
+    height:83%;
+    top:13%;
+    min-width: 250px;
+    width: 45%;
 }
 label{
     color: #C0C0C0;
@@ -130,6 +138,7 @@ input,select{
     font-family: Impact, sans-serif;
     width: 20%;
     font-size: 1em;
+    min-width: 75px;
 }
 #add-event-button{
     color: green;
@@ -137,3 +146,36 @@ input,select{
 #cancel-event-button{
     color:#FF4500;
 }
+.filter-selection-container{
+    position: fixed;
+    top:12%;
+    left:62%;
+    text-align: center;
+    width:25%;
+}
+#filter-select{
+    font-family: Courier,monospace;
+    color: #C0C0C0;
+    background-color: #333333;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    border: 3px solid;
+    width: 320px;
+}
+.filter-action-button{
+  font-family: Courier, monospace;
+  font-size: 16px;
+  letter-spacing: 2px;
+  color: #C0C0C0;
+  background-color: #333333;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+}
+@media screen and (min-width: 790px) {
+#dropdown{
+    display: none;
+}
+}
+
